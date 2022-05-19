@@ -14,4 +14,12 @@ export class FormComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  getName(name: string) {
+    this.name = name;
+  }
+
+  onSubmit() {
+    this.data.emit(this.name);
+  }
 }

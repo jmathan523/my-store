@@ -1,5 +1,5 @@
 <form
-  (ngSubmit)="deliveryForm.valid && data.emit(name)"
+  (ngSubmit)="deliveryForm.valid && onSubmit()"
   class="form-container"
   novalidate
   #deliveryForm="ngForm"
@@ -9,6 +9,7 @@
     type="text"
     name="name"
     [(ngModel)]="name"
+    (ngModelChange)="getName($event)"
     placeholder="Enter your name"
     required
     minlength="3"
