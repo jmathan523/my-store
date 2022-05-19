@@ -13,7 +13,6 @@ export class CartService {
   addToCart(cartItem: Cart) {
     this.cart = this.getCartItems();
     // find product already exists in cart
-    console.log(this.cart);
     let existingCartItem = this.cart.find((item) => item.id === cartItem.id);
 
     if (existingCartItem) {

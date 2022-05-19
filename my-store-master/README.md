@@ -48,7 +48,7 @@ Have used [@Input](https://angular.io/api/core/Input) decorator to pass data fro
 
 Cart component will display the items added to the cart and fetch the list from the local storage. Remove option has been provided to each cart item to delete the item from the cart. We can also modify the cart item quantity. The price and Subtotal will be modified based on the item quantity change.
 
-Template driven forms using `ngForm` is implemented using proper validations. Use two-way binding to listen for events and update values simultaneously between parent and child components using `ngModel`. On form submission, confirmation screen will be displayed and cart items will be cleared in the localstorage.
+Template driven forms using `ngForm` is implemented using proper validations. Use two-way binding to listen for events and update values simultaneously between parent and child components using `ngModel`. On form submission, confirmation screen will be displayed and cart items will be cleared from the localstorage.
 
 ## Further help
 
