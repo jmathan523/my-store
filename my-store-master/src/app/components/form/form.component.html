@@ -1,0 +1,74 @@
+<form
+  (ngSubmit)="deliveryForm.valid && data.emit(name)"
+  class="form-container"
+  novalidate
+  #deliveryForm="ngForm"
+>
+  <input
+    class="form-input"
+    type="text"
+    name="name"
+    [(ngModel)]="name"
+    placeholder="Enter your name"
+    required
+    minlength="3"
+    autocomplete="none"
+    #username="ngModel"
+  />
+  <div *ngIf="deliveryForm.submitted && (username.invalid || username.dirty)">
+    <span class="error-text" *ngIf="username.errors?.['required']"
+      >Please enter your name</span
+    >
+    <span class="error-text" *ngIf="username.errors?.['minlength']"
+      >Name should have minimum of 3 characters</span
+    >
+  </div>
+  <br />
+  <input
+    class="form-input"
+    type="text"
+    name="address"
+    [(ngModel)]="address"
+    placeholder="Enter your address"
+    required
+    minlength="10"
+    autocomplete="none"
+    #addr="ngModel"
+  />
+  <div *ngIf="deliveryForm.submitted && (addr.invalid || addr.dirty)">
+    <span class="error-text" *ngIf="addr.errors?.['required']"
+      >Please enter your address</span
+    >
+    <span class="error-text" *ngIf="addr.errors?.['minlength']"
+      >Address should have minimum of 10 characters</span
+    >
+  </div>
+  <br />
+  <!-- REFERENCE: https://stackoverflow.com/questions/9361193/why-is-input-type-number-maxlength-3-not-working-in-safari -->
+  <input
+    class="form-input"
+    type="text"
+    oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+    name="cardnumber"
+    [(ngModel)]="cardNumber"
+    placeholder="Enter your 16 digit card number"
+    required
+    minlength="16"
+    maxlength="16"
+    autocomplete="none"
+    #card="ngModel"
+  />
+  <div *ngIf="deliveryForm.submitted && (card.invalid || card.dirty)">
+    <span class="error-text" *ngIf="card.errors?.['required']"
+      >Please enter your card number</span
+    >
+    <span class="error-text" *ngIf="card.errors?.['minlength']"
+      >Card number should have minimum of 16 characters</span
+    >
+    <span class="error-text" *ngIf="card.errors?.['maxlength']"
+      >Card number should have maximum of 16 characters</span
+    >
+  </div>
+  <br />
+  <button type="submit" class="check-out-btn">Check out</button>
+</form>

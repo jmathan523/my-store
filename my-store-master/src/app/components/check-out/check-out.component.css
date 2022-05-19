@@ -1,0 +1,38 @@
+.container {
+  font-family: "Oxygen", Arial, Helvetica, sans-serif;
+  height: 85vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.heading {
+  text-align: center;
+}
+
+.cart-items {
+  overflow-y: scroll;
+}
+
+.shop-btn {
+  padding: 0.5rem 1.25rem;
+  background-color: #33b5e5;
+  border: none;
+  border-radius: 0.2rem;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.form-container {
+  height: 100%;
+}

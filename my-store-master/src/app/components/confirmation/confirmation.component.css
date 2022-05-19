@@ -1,0 +1,23 @@
+.container {
+  text-align: center;
+  font-family: "Oxygen", Arial, Helvetica, sans-serif;
+}
+
+.message {
+  color: #40e0d0;
+}
+
+.name,
+.price {
+  font-weight: 700;
+}
+
+.shop-btn {
+  padding: 0.75rem;
+  background-color: #33b5e5;
+  border: none;
+  border-radius: 0.2rem;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}

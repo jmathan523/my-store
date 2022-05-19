@@ -1,0 +1,16 @@
+<div class="product-item-container">
+  <!-- ROUTERLINK :: https://angular.io/start/start-routing#associate-a-url-path-with-a-component -->
+  <div class="image-container" [routerLink]="['/product_detail', product.id]">
+    <img class="product-image" src="{{ product.url }}" />
+  </div>
+  <div class="product-detail-container">
+    <p class="product-name">{{ product.name }}</p>
+    <p class="product-price">${{ product.price }}</p>
+  </div>
+  <div class="product-count-container">
+    <select class="product-count" (change)="selectedVal($event)">
+      <option *ngFor="let cnt of count" [value]="cnt">{{ cnt }}</option>
+    </select>
+    <button class="cart-btn" (click)="pushToCart(product)">Add to cart</button>
+  </div>
+</div>

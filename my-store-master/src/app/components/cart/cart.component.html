@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="image-container">
+    <img class="prod-image" src="{{ cartItem.url }}" />
+  </div>
+  <div class="product-detail-container">
+    <p class="product-name">{{ cartItem.name }}</p>
+    <p class="product-price">$ {{ cartItem.price }}</p>
+    <select class="product-count" (change)="onQtyChange($event)">
+      <!-- update the option with the cart count value using [selected] directive-->
+      <option
+        *ngFor="let cnt of count"
+        [selected]="cnt === cartItem.count"
+        [value]="cnt"
+      >
+        {{ cnt }}
+      </option>
+    </select>
+    <span> Qty</span>
+    <p>
+      Total Price:
+      <span class="total-price"
+        >${{ (cartItem.price * cartItem.count).toFixed(2) }}</span
+      >
+    </p>
+    <button class="delete-btn" (click)="deleteItem.emit(cartItem)">
+      Remove
+    </button>
+  </div>
+</div>

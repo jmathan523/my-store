@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="product-detail-container">
+    <div class="product-detail">
+      <div class="image-container">
+        <img class="prod-image" src="{{ product.url }}" />
+      </div>
+      <div class="product-details">
+        <p class="prod-name">{{ product.name }}</p>
+        <p class="prod-price">${{ product.price }}</p>
+        <p class="prod-desp">{{ product.description }}</p>
+        <select class="prod-count" (change)="selectedVal($event)">
+          <option *ngFor="let cnt of count" value="{{ cnt }}">
+            {{ cnt }}
+          </option>
+        </select>
+        <button class="cart-btn" (click)="pushToCart(product)">
+          Add to cart
+        </button>
+        <div>
+          <a routerLink="/check_out">Go to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

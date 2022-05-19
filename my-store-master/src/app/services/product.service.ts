@@ -1,0 +1,15 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ProductService {
+  constructor(private http: HttpClient) {}
+
+  getProducts(): Observable<[]> {
+    // GET method to fetch the products from json file
+    return this.http.get<[]>('assets/data.json');
+  }
+}
